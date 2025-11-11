@@ -7,6 +7,8 @@
 </head>
 <body>
     <div class="container">
+        <img src="./" />
+
         <h1>Thanks for joining our email list</h1>
 
         <p>Here is the information that you entered:</p>
