@@ -6,7 +6,7 @@
 }
 
 html, body {
-    height: 100%;
+    min-height: 100vh
 }
 
 body {
@@ -15,10 +15,10 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../images/bg-desktop.png");
+/*    background-image: url("../images/bg-desktop.png");
     background-repeat: no-repeat;
     background-position: center;
-    background-size: cover;
+    background-size: cover;*/
     background-color: hsl(229, 57%, 11%);
     padding: 1rem;
 }
@@ -33,6 +33,7 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 500px;
+    min-height: 100vh
 }
 
 h1, p {

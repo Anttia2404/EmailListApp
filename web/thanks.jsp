@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
-    <div class = "container">
+    <div class="container">
         <h1>Thanks for joining our email list</h1>
 
         <p>Here is the information that you entered:</p>
@@ -19,6 +19,9 @@
 
         <label>Last Name:</label>
         <span>${user.lastName}</span><br>
+        
+        <label>Date of birth:</label>
+        <span>${user.dateOfBirth}</span><br>
 
         <p class="advice">To enter another email address, click on the Return button.</p>
 

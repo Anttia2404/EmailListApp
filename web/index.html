@@ -5,12 +5,14 @@
     <title>Bai tap buoi 1</title>
     <link rel="stylesheet" href="styles/main.css">
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    </head>
+</head>
 <body>
-    <div class = "container">
+    <div class="container">
+        <h1>Survey</h1>
+        <p>If you have a moment, we'd appreciate it if you would fill out this survey</p>
+
         <h1>Join our email list</h1>
-        <p>To join our email list, enter your name and
-           email address below.</p>
+        <p>To join our email list, enter your name and email address below.</p>
 
         <form action="emailList" method="post">
 
@@ -24,9 +26,29 @@
 
             <label>Last Name:</label>
             <input type="text" name="lastName" required><br>
+            
+            <label>Date of birth:</label>
+            <input type="text" name="dateOfBirth" required><br>
 
-            <label>&nbsp;</label>
-            <input type="submit" value="Join Now" id="submit">
+            <h3>How did you hear about us?</h3>
+            <label><input type="radio" name="source" value="search" required> Search engine</label><br>
+            <label><input type="radio" name="source" value="word_of_mouth"> Word of mouth</label><br>
+            <label><input type="radio" name="source" value="social_media"> Social media</label><br>
+            <label><input type="radio" name="source" value="other"> Other</label><br>
+
+            <h3>Would you like to receive announcements about new CDs and special offers?</h3>
+            <label><input type="checkbox" name="offers" value="cds"> Yes, I'd like that</label><br>
+            <label><input type="checkbox" name="offers" value="emails"> Yes, please send me email announcements</label><br>
+
+            <h3>Please contact me by:</h3>
+            <select name="contact_method" required>
+                <option value="">-- Select a contact method --</option>
+                <option value="email_or_post">Email or postal mail</option>
+                <option value="email">Email only</option>
+                <option value="postal">Postal mail only</option>
+            </select><br><br>
+            
+            <input type="submit" value="Submit">
         </form>
     </div>
 </body>
