@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-        <img src="./" />
+         <img src ='./images/murach.png' atl = "murach"/>
 
         <h1>Thanks for joining our email list</h1>
 

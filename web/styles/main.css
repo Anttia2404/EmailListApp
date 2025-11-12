@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +5,7 @@
 }
 
 html, body {
-    min-height: 100vh
+    min-height: 100vh;
 }
 
 body {
@@ -20,66 +19,138 @@ body {
     background-position: center;
     background-size: cover;
     background-color: hsl(229, 57%, 11%);
-    padding: 1rem;
+    padding: 2rem; /* Thêm padding cho body */
+    color: hsl(243, 100%, 93%);
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
     background-color: hsl(228, 56%, 26%);
-    padding: 3rem;
+    padding: 2.5rem 3rem;
     border-radius: 1rem 5rem 1rem 1rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     width: 100%;
-    max-width: 500px;
-    min-height: 100vh
+    max-width: 600px;
+    /* (1) Bỏ min-height: 100vh; để container co giãn theo nội dung */
 }
 
-h1, p {
+/* (2) Căn giữa header (logo, title) */
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding-bottom: 1rem; /* Thêm khoảng cách */
+    border-bottom: 1px solid hsl(229, 57%, 11%); /* Thêm đường kẻ ngăn cách */
+}
+
+h1, legend {
     color: white;
     text-align: center;
     margin-bottom: 0.5rem;
 }
+
 img {
     width: 70px;
-    height: auto
+    height: auto;
 }
+
 p {
     color: hsl(243, 100%, 93%);
+    text-align: center;
+}
+
+/* (3) Style cho các nhóm <fieldset> */
+fieldset {
+    border: none; /* Bỏ viền mặc định */
+    padding: 0;
+    margin-bottom: 1rem;
+}
+
+/* (4) Style cho tiêu đề nhóm <legend> (thay thế h3) */
+legend {
+    font-size: 1.2rem; /* Nhỏ hơn h1 1 chút */
+    font-weight: 700;
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+
+/* (5) Nhóm label + input (thay cho <br>) */
+.form-group {
+    margin-bottom: 1.5em;
 }
 
 label {
     display: block;
     margin-bottom: 0.5em;
     color: hsl(243, 100%, 93%);
-    font-weight: 900;
+    font-weight: 600;
 }
 
-input[type="text"], input[type="email"] {
+/* (6) Style chung cho input, select */
+input[type="text"], 
+input[type="email"],
+select {
     width: 100%;
-    margin-bottom: 1.5em;
+    margin-bottom: 0;
     border-radius: 0.5rem;
     padding: 0.8rem;
     border: 2px solid transparent;
     background-color: hsl(229, 57%, 11%);
     color: white;
     transition: all 0.3s ease;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 11pt;
 }
 
+/* (7) Style cho <option> bên trong <select> */
+select option {
+    background-color: hsl(229, 57%, 11%);
+    color: white;
+}
+
+/* (8) Style khi focus (chọn) */
 input[type="text"]:focus, 
-input[type="email"]:focus {
+input[type="email"]:focus,
+select:focus {
     outline: none;
     border-color: hsl(335, 100%, 65%);
     box-shadow: 0 0 10px hsla(335, 100%, 80%, 0.5);
 }
 
+/* (9) Style cho nhóm radio và checkbox */
+.radio-group,
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 0.75rem;
+    /* Dùng accent-color để đổi màu radio/checkbox cho hợp theme */
+    accent-color: hsl(335, 100%, 65%);
+    width: 1.25em; /* Làm cho nó lớn hơn 1 chút */
+    height: 1.25em;
+}
+
+/* (10) Style riêng cho label của radio/checkbox */
+.radio-group label,
+.checkbox-group label {
+    font-weight: normal;
+    margin: 0; /* Bỏ margin-bottom mặc định của label */
+}
+
+/* Ẩn <br> đi (vẫn giữ) */
 br {
     display: none;
 }
 
-#submit,
-input[type="submit"][value="Return"] {
+/* (11) Đổi tên selector cho nút Submit */
+input[type="submit"] {
     background-image: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
     width: 100%;
     padding: 1rem;
@@ -90,10 +161,10 @@ input[type="submit"][value="Return"] {
     border: none;
     margin-top: 1rem;
     transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
-#submit:hover,
-input[type="submit"][value="Return"]:hover {
+input[type="submit"]:hover {
     opacity: 0.8;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     transform: translateY(-2px);
@@ -101,9 +172,9 @@ input[type="submit"][value="Return"]:hover {
 
 span{
     color:white;
-    
 }
 
 .advice {
-    margin-top: 2rem
+    margin-top: 2rem;
+    text-align: center;
 }
