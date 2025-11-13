@@ -5,17 +5,19 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
+import jakarta.servlet.annotation.WebServlet;
 import murach.business.User;
 
+
+@WebServlet("/emailList")
 public class EmailListServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request,
             HttpServletResponse response)
-            throws ServletException, IOException {
+            throws ServletException, IOException { //ngoai le
         
-        String url = "/index.html";
+        String url = "/index.jsp"; 
         
         String action = request.getParameter("action");
         if (action == null) {
@@ -23,18 +25,46 @@ public class EmailListServlet extends HttpServlet {
         }
 
         if (action.equals("join")) {
-            url = "/index.html";
+            url = "/index.jsp";
         } 
         else if (action.equals("add")) {
             String firstName = request.getParameter("firstName");
             String lastName = request.getParameter("lastName");
             String email = request.getParameter("email");
             String dateOfBirth = request.getParameter("dateOfBirth");
+            String source = request.getParameter("source");
+            String[] offers = request.getParameterValues("offers");
+            String contactMethod = request.getParameter("contact_method");
+            
+            if (firstName.equals("error")) {
+                throw new RuntimeException("Test lỗi Java từ servlet!");
+            }
+            
+            
+            System.out.println("Action: " + action);
+            System.out.println("First Name: " + firstName);
+            System.out.println("Last Name: " + lastName);
+            System.out.println("Email: " + email);
 
-            User user = new User(firstName, lastName, email, dateOfBirth);
+            User user = new User(firstName, lastName, email, dateOfBirth, 
+                                 source, offers, contactMethod);
+            
+            String message;
+            
+            if (firstName == null || firstName.isEmpty() ||
+                lastName == null  || lastName.isEmpty() ||
+                email == null     || email.isEmpty()) {
+                
+                message = "Please fill out all required fields: Email, First Name, and Last Name.";
+                url = "/index.jsp";
+            } 
+            else {
+                message = "";
+                url = "thanks.jsp";
+            }
+            
             request.setAttribute("user", user);
-
-            url = "/thanks.jsp"; 
+            request.setAttribute("message", message);
         }
 
         getServletContext()

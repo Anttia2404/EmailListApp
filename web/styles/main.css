@@ -19,7 +19,7 @@ body {
     background-position: center;
     background-size: cover;
     background-color: hsl(229, 57%, 11%);
-    padding: 2rem; /* Thêm padding cho body */
+    padding: 2rem;
     color: hsl(243, 100%, 93%);
 }
 
@@ -33,17 +33,15 @@ body {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     width: 100%;
     max-width: 600px;
-    /* (1) Bỏ min-height: 100vh; để container co giãn theo nội dung */
 }
 
-/* (2) Căn giữa header (logo, title) */
 header {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
-    padding-bottom: 1rem; /* Thêm khoảng cách */
-    border-bottom: 1px solid hsl(229, 57%, 11%); /* Thêm đường kẻ ngăn cách */
+    padding-bottom: 1rem;
+    border-bottom: 1px solid hsl(229, 57%, 11%);
 }
 
 h1, legend {
@@ -62,22 +60,19 @@ p {
     text-align: center;
 }
 
-/* (3) Style cho các nhóm <fieldset> */
 fieldset {
-    border: none; /* Bỏ viền mặc định */
+    border: none;
     padding: 0;
     margin-bottom: 1rem;
 }
 
-/* (4) Style cho tiêu đề nhóm <legend> (thay thế h3) */
 legend {
-    font-size: 1.2rem; /* Nhỏ hơn h1 1 chút */
+    font-size: 1.2rem;
     font-weight: 700;
     width: 100%;
     padding-bottom: 0.5rem;
 }
 
-/* (5) Nhóm label + input (thay cho <br>) */
 .form-group {
     margin-bottom: 1.5em;
 }
@@ -89,7 +84,6 @@ label {
     font-weight: 600;
 }
 
-/* (6) Style chung cho input, select */
 input[type="text"], 
 input[type="email"],
 select {
@@ -105,13 +99,11 @@ select {
     font-size: 11pt;
 }
 
-/* (7) Style cho <option> bên trong <select> */
 select option {
     background-color: hsl(229, 57%, 11%);
     color: white;
 }
 
-/* (8) Style khi focus (chọn) */
 input[type="text"]:focus, 
 input[type="email"]:focus,
 select:focus {
@@ -120,7 +112,6 @@ select:focus {
     box-shadow: 0 0 10px hsla(335, 100%, 80%, 0.5);
 }
 
-/* (9) Style cho nhóm radio và checkbox */
 .radio-group,
 .checkbox-group {
     display: flex;
@@ -131,25 +122,21 @@ select:focus {
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 0.75rem;
-    /* Dùng accent-color để đổi màu radio/checkbox cho hợp theme */
     accent-color: hsl(335, 100%, 65%);
-    width: 1.25em; /* Làm cho nó lớn hơn 1 chút */
+    width: 1.25em;
     height: 1.25em;
 }
 
-/* (10) Style riêng cho label của radio/checkbox */
 .radio-group label,
 .checkbox-group label {
     font-weight: normal;
-    margin: 0; /* Bỏ margin-bottom mặc định của label */
+    margin: 0;
 }
 
-/* Ẩn <br> đi (vẫn giữ) */
 br {
     display: none;
 }
 
-/* (11) Đổi tên selector cho nút Submit */
 input[type="submit"] {
     background-image: linear-gradient(90deg, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
     width: 100%;
@@ -170,11 +157,19 @@ input[type="submit"]:hover {
     transform: translateY(-2px);
 }
 
-span{
-    color:white;
+span {
+    color: white;
 }
 
 .advice {
     margin-top: 2rem;
     text-align: center;
+}
+
+.error-message {
+    color: #D8000C; 
+    background-color: #FFD2D2; 
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: 500;
 }

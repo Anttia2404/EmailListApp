@@ -1,7 +1,7 @@
 package murach.business;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.util.Arrays;
 
 public class User implements Serializable {
 
@@ -9,32 +9,31 @@ public class User implements Serializable {
     private String lastName;
     private String email;
     private String dateOfBirth;
+    private String source;
+    private String[] offers;
+    private String contactMethod;
 
-    // Constructor mặc định
     public User() {
         this.firstName = "";
         this.lastName = "";
         this.email = "";
-        this.dateOfBirth = null; // mặc định chưa có ngày sinh
+        this.dateOfBirth = "";
+        this.source = "";
+        this.contactMethod = "";
+        this.offers = new String[0];
     }
 
-    // Constructor không có dateOfBirth
-    public User(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.dateOfBirth = null;
-    }
-
-    // Constructor đầy đủ có dateOfBirth
-    public User(String firstName, String lastName, String email, String dateOfBirth) {
+    public User(String firstName, String lastName, String email, String dateOfBirth,
+                String source, String[] offers, String contactMethod) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
+        this.source = source;
+        this.offers = offers;
+        this.contactMethod = contactMethod;
     }
 
-    // Getter và Setter
     public String getFirstName() {
         return firstName;
     }
@@ -62,15 +61,40 @@ public class User implements Serializable {
     public String getDateOfBirth() {
         return dateOfBirth;
     }
-
+    
     public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
+    
+    public String getSource() {
+        return source;
+    }
 
-    // Optional: hiển thị thông tin user
+    public void setSource(String source) {
+        this.source = source;
+    }
+
+    public String[] getOffers() {
+        return offers;
+    }
+
+    public void setOffers(String[] offers) {
+        this.offers = offers;
+    }
+
+    public String getContactMethod() {
+        return contactMethod;
+    }
+
+    public void setContactMethod(String contactMethod) {
+        this.contactMethod = contactMethod;
+    }
+
     @Override
     public String toString() {
         return "User [firstName=" + firstName + ", lastName=" + lastName +
-               ", email=" + email + ", dateOfBirth=" + dateOfBirth + "]";
+               ", email=" + email + ", dateOfBirth=" + dateOfBirth + 
+               ", source=" + source + ", offers=" + Arrays.toString(offers) + 
+               ", contactMethod=" + contactMethod + "]";
     }
 }
