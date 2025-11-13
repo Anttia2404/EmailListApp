@@ -60,7 +60,7 @@ public class EmailListServlet extends HttpServlet {
             } 
             else {
                 message = "";
-                url = "thanks.jsp";
+                url = "/thanks.jsp";
             }
             
             request.setAttribute("user", user);
