@@ -1,19 +1,4 @@
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Bai tap</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <style>
-        .offer-list { list-style: none; margin: 0; padding: 0; }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <img src='./images/murach.png' alt="Murach Logo"/>
-        </header>
+<jsp:include page="includes/header.jsp" />
 
         <h1>Thanks for joining our email list</h1>
         <p>Here is the information that you entered:</p>
@@ -76,6 +61,4 @@
             <input type="hidden" name="action" value="join">
             <input type="submit" value="Return">
         </form>
-    </div>
-</body>
-</html>
+    <jsp:include page="includes/footer.jsp" />

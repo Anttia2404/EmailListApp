@@ -1,20 +1,5 @@
-<%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>Bai tap</title>
-    <link rel="stylesheet" href="styles/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <img src='./images/murach.png' alt="Murach Logo"/>
-            <h1>Survey</h1>
-            <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
-        </header>
-
+<jsp:include page="includes/header.jsp" />
+        <p>If you have a moment, we'd appreciate it if you would fill out this survey.</p>
         <p class="error-message"><i>${message}</i></p>
         
         <form action="emailList" method="post">
@@ -99,6 +84,4 @@
             
             <input type="submit" value="Submit">
         </form>
-    </div>
-</body>
-</html>
+    <jsp:include page="includes/footer.jsp" />
